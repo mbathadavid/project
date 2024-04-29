@@ -97,6 +97,13 @@ class GeneralModel extends Model
                     ->getRow();
     }
 
-    
+    //Check whether Module has been Created Before
+   function check_module($module) {
+    return $this->db
+                ->table('modules')
+                ->where('module_name',$module)
+                ->get()
+                ->getRow();
+    }
  
 }
